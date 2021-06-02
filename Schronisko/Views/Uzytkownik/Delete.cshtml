@@ -1,0 +1,82 @@
+﻿@model Schronisko.uzytkownik
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>uzytkownik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.miasto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.miasto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kod_pocztowy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kod_pocztowy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ulica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ulica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nr_mieszkania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nr_mieszkania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.konto_info.login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.konto_info.login)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

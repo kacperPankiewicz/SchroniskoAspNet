@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Schronisko.zwierze>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_ur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kastracja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zdjecie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gatunek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wielkosc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kojec.dystrykt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rasa.nazwa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_ur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kastracja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zdjecie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gatunek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wielkosc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kojec.dystrykt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rasa.nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

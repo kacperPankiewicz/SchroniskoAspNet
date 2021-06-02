@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchroniskoBazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="historia_adopcji">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Zwierze_id" Type="Int32" Nullable="false" />
+    <Property Name="Uzytkownik_id" Type="Int32" Nullable="false" />
+    <Property Name="Pracownik_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pracownik" Relationship="Self.FK__historia___Praco__4BAC3F29" FromRole="historia_adopcji" ToRole="pracownik" />
+    <NavigationProperty Name="uzytkownik" Relationship="Self.FK__historia___Uzytk__4CA06362" FromRole="historia_adopcji" ToRole="uzytkownik" />
+    <NavigationProperty Name="zwierze" Relationship="SchroniskoBazaModel.FK__historia___Zwier__4D94879B" FromRole="historia_adopcji" ToRole="zwierze" />
+  </EntityType>
+  <EntityType Name="kojec">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dystrykt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="klatka" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="zwierze" Relationship="SchroniskoBazaModel.FK__zwierze__Kojec_i__2F10007B" FromRole="kojec" ToRole="zwierze" />
+  </EntityType>
+  <EntityType Name="konto_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="haslo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Uprawnienia_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="uprawnienia" Relationship="Self.FK__konto_inf__Upraw__34C8D9D1" FromRole="konto_info" ToRole="uprawnienia" />
+    <NavigationProperty Name="uzytkownik" Relationship="Self.FK__uzytkowni__Konto__3E52440B" FromRole="konto_info" ToRole="uzytkownik" />
+  </EntityType>
+  <EntityType Name="pracownik">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="miasto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="kod_pocztowy" Type="Int32" />
+    <Property Name="ulica" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nr_mieszkania" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="stanowisko_id" Type="Int32" Nullable="false" />
+    <Property Name="Uzytkownik_Info_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="historia_adopcji" Relationship="Self.FK__historia___Praco__4BAC3F29" FromRole="pracownik" ToRole="historia_adopcji" />
+    <NavigationProperty Name="stanowisko" Relationship="Self.FK__pracownik__stano__48CFD27E" FromRole="pracownik" ToRole="stanowisko" />
+    <NavigationProperty Name="uzytkownik" Relationship="Self.FK__pracownik__Uzytk__47DBAE45" FromRole="pracownik" ToRole="uzytkownik" />
+  </EntityType>
+  <EntityType Name="rasa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="zwierze" Relationship="SchroniskoBazaModel.FK__zwierze__rasa_id__300424B4" FromRole="rasa" ToRole="zwierze" />
+  </EntityType>
+  <EntityType Name="stanowisko">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="placa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="pracownik" Relationship="Self.FK__pracownik__stano__48CFD27E" FromRole="stanowisko" ToRole="pracownik" />
+  </EntityType>
+  <EntityType Name="uprawnienia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="konto_info" Relationship="Self.FK__konto_inf__Upraw__34C8D9D1" FromRole="uprawnienia" ToRole="konto_info" />
+  </EntityType>
+  <EntityType Name="uzytkownik">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="miasto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="kod_pocztowy" Type="Int32" />
+    <Property Name="ulica" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nr_mieszkania" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Konto_Info_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="historia_adopcji" Relationship="Self.FK__historia___Uzytk__4CA06362" FromRole="uzytkownik" ToRole="historia_adopcji" />
+    <NavigationProperty Name="konto_info" Relationship="Self.FK__uzytkowni__Konto__3E52440B" FromRole="uzytkownik" ToRole="konto_info" />
+    <NavigationProperty Name="pracownik" Relationship="Self.FK__pracownik__Uzytk__47DBAE45" FromRole="uzytkownik" ToRole="pracownik" />
+  </EntityType>
+  <Association Name="FK__historia___Praco__4BAC3F29">
+    <End Role="pracownik" Type="Self.pracownik" Multiplicity="1" />
+    <End Role="historia_adopcji" Type="Self.historia_adopcji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pracownik">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historia_adopcji">
+        <PropertyRef Name="Pracownik_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historia___Uzytk__4CA06362">
+    <End Role="uzytkownik" Type="Self.uzytkownik" Multiplicity="1" />
+    <End Role="historia_adopcji" Type="Self.historia_adopcji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uzytkownik">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historia_adopcji">
+        <PropertyRef Name="Uzytkownik_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__konto_inf__Upraw__34C8D9D1">
+    <End Role="uprawnienia" Type="Self.uprawnienia" Multiplicity="1" />
+    <End Role="konto_info" Type="Self.konto_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uprawnienia">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="konto_info">
+        <PropertyRef Name="Uprawnienia_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__uzytkowni__Konto__3E52440B">
+    <End Role="konto_info" Type="Self.konto_info" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="uzytkownik" Type="Self.uzytkownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="konto_info">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="uzytkownik">
+        <PropertyRef Name="Konto_Info_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pracownik__stano__48CFD27E">
+    <End Role="stanowisko" Type="Self.stanowisko" Multiplicity="1" />
+    <End Role="pracownik" Type="Self.pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stanowisko">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pracownik">
+        <PropertyRef Name="stanowisko_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pracownik__Uzytk__47DBAE45">
+    <End Role="uzytkownik" Type="Self.uzytkownik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pracownik" Type="Self.pracownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uzytkownik">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pracownik">
+        <PropertyRef Name="Uzytkownik_Info_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchroniskoBazaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="historia_adopcji" EntityType="Self.historia_adopcji" />
+    <EntitySet Name="kojec" EntityType="Self.kojec" />
+    <EntitySet Name="konto_info" EntityType="Self.konto_info" />
+    <EntitySet Name="pracownik" EntityType="Self.pracownik" />
+    <EntitySet Name="rasa" EntityType="Self.rasa" />
+    <EntitySet Name="stanowisko" EntityType="Self.stanowisko" />
+    <EntitySet Name="uprawnienia" EntityType="Self.uprawnienia" />
+    <EntitySet Name="uzytkownik" EntityType="Self.uzytkownik" />
+    <AssociationSet Name="FK__historia___Praco__4BAC3F29" Association="Self.FK__historia___Praco__4BAC3F29">
+      <End Role="pracownik" EntitySet="pracownik" />
+      <End Role="historia_adopcji" EntitySet="historia_adopcji" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historia___Uzytk__4CA06362" Association="Self.FK__historia___Uzytk__4CA06362">
+      <End Role="uzytkownik" EntitySet="uzytkownik" />
+      <End Role="historia_adopcji" EntitySet="historia_adopcji" />
+    </AssociationSet>
+    <AssociationSet Name="FK__konto_inf__Upraw__34C8D9D1" Association="Self.FK__konto_inf__Upraw__34C8D9D1">
+      <End Role="uprawnienia" EntitySet="uprawnienia" />
+      <End Role="konto_info" EntitySet="konto_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__uzytkowni__Konto__3E52440B" Association="Self.FK__uzytkowni__Konto__3E52440B">
+      <End Role="konto_info" EntitySet="konto_info" />
+      <End Role="uzytkownik" EntitySet="uzytkownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pracownik__stano__48CFD27E" Association="Self.FK__pracownik__stano__48CFD27E">
+      <End Role="stanowisko" EntitySet="stanowisko" />
+      <End Role="pracownik" EntitySet="pracownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pracownik__Uzytk__47DBAE45" Association="Self.FK__pracownik__Uzytk__47DBAE45">
+      <End Role="uzytkownik" EntitySet="uzytkownik" />
+      <End Role="pracownik" EntitySet="pracownik" />
+    </AssociationSet>
+    <EntitySet Name="zwierze" EntityType="SchroniskoBazaModel.zwierze" />
+    <AssociationSet Name="FK__historia___Zwier__4D94879B" Association="SchroniskoBazaModel.FK__historia___Zwier__4D94879B">
+      <End Role="zwierze" EntitySet="zwierze" />
+      <End Role="historia_adopcji" EntitySet="historia_adopcji" />
+    </AssociationSet>
+    <AssociationSet Name="FK__zwierze__Kojec_i__2F10007B" Association="SchroniskoBazaModel.FK__zwierze__Kojec_i__2F10007B">
+      <End Role="kojec" EntitySet="kojec" />
+      <End Role="zwierze" EntitySet="zwierze" />
+    </AssociationSet>
+    <AssociationSet Name="FK__zwierze__rasa_id__300424B4" Association="SchroniskoBazaModel.FK__zwierze__rasa_id__300424B4">
+      <End Role="rasa" EntitySet="rasa" />
+      <End Role="zwierze" EntitySet="zwierze" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="zwierze">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="data_ur" Type="DateTime" Precision="0" />
+    <Property Name="kastracja" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Kojec_id" Type="Int32" Nullable="false" />
+    <Property Name="rasa_id" Type="Int32" Nullable="false" />
+    <Property Name="zdjecie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="plec" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="gatunek" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="wielkosc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="historia_adopcji" Relationship="SchroniskoBazaModel.FK__historia___Zwier__4D94879B" FromRole="zwierze" ToRole="historia_adopcji" />
+    <NavigationProperty Name="kojec" Relationship="SchroniskoBazaModel.FK__zwierze__Kojec_i__2F10007B" FromRole="zwierze" ToRole="kojec" />
+    <NavigationProperty Name="rasa" Relationship="SchroniskoBazaModel.FK__zwierze__rasa_id__300424B4" FromRole="zwierze" ToRole="rasa" />
+  </EntityType>
+  <Association Name="FK__historia___Zwier__4D94879B">
+    <End Type="SchroniskoBazaModel.zwierze" Role="zwierze" Multiplicity="1" />
+    <End Type="SchroniskoBazaModel.historia_adopcji" Role="historia_adopcji" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zwierze">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historia_adopcji">
+        <PropertyRef Name="Zwierze_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__zwierze__Kojec_i__2F10007B">
+    <End Type="SchroniskoBazaModel.kojec" Role="kojec" Multiplicity="1" />
+    <End Type="SchroniskoBazaModel.zwierze" Role="zwierze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kojec">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="zwierze">
+        <PropertyRef Name="Kojec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__zwierze__rasa_id__300424B4">
+    <End Type="SchroniskoBazaModel.rasa" Role="rasa" Multiplicity="1" />
+    <End Type="SchroniskoBazaModel.zwierze" Role="zwierze" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rasa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="zwierze">
+        <PropertyRef Name="rasa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

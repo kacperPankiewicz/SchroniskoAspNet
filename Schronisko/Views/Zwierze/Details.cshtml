@@ -1,0 +1,92 @@
+﻿@model Schronisko.zwierze
+
+<div>
+    <h4>zwierze</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_ur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_ur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kastracja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kastracja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zdjecie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zdjecie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gatunek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gatunek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.wielkosc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.wielkosc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kojec.dystrykt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kojec.dystrykt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rasa.nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rasa.nazwa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

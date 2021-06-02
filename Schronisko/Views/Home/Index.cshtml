@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/homeStyles.css" rel="stylesheet" />
+<div id="home">
+    <div id="text" class="text-center">Wyszukaj, pokochaj, adoptuj.</div>
+    <div id="finder" class="container-fluid">
+        <div class="row text-center align-items-center">
+            <a href="@Url.Action("Index","Wyszukiwarka")">
+                <div class="col-sm-3 vcenter1">
+                    Znajdź kota
+                </div>
+            </a>
+            <a href="@Url.Action("Index","Wyszukiwarka")">
+                <div class="col-sm-6 vcenter" style="border-left:1px solid #025923;border-right:1px solid #025923">
+                    Znajdz przyjaciela
+                </div>
+            </a>
+            <a href="@Url.Action("Index","Wyszukiwarka")">
+                <div class="col-sm-3 vcenter2">
+                    Znajdź psa
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="decoration"></div>
+</div>
+<div class="container ">
+    <h1  class="text-center naglowki" >Zwierzęta do adopcji</h1>
+    <div class="row animalDisplay">
+        @foreach (zwierze zw in (zwierze[])ViewBag.zwierzeta)
+        {
+            <a href="@Url.Action("Details","Zwierze",new { id = zw.id})">
+                <div class="col-sm-2 image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                    <img src="~/pictures/pets/@zw.zdjecie" class="image_img" />
+                    <div class="image_overlay image_overlay--blur">
+                        <div class="pet_name">@zw.nazwa</div>
+                        <p class="sex"><span class="title">Płeć:</span> @zw.plec<br /><span class="title">Wielkość: </span>@zw.wielkosc</p>
+
+                    </div>
+                </div>
+            </a>
+        }
+        <a href="@Url.Action("Index","Wyszukiwarka")">
+            <div class="col-sm-2 image1 pdr-2 ">
+            <div id="borderInside">
+                <div id="contentBorder"><h2>Zobacz więcej</h2></div>
+            </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="form-horizontal">
+        <div class="owl-carousel owl-theme">
+        </div>
+    </div>
+</div>
+<div id="counterDisplay" class="bg-success container-fluid">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>Statystyki</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class=" text-center allocationItem1">
+                <div><img src="~/pictures/dog1.png" class="img-responsive center-block" style="max-width:50%" /></div>
+                <div class="number">@ViewBag.piesCounter</div>
+                <div class="header2">Ilość psów do adopcji</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="allocationItem2 text-center">
+                <div><img src="~/pictures/love1.png" class="img-responsive center-block" style="max-width:50%" /></div>
+                <div class="number">@ViewBag.adopcjaCounter</div>
+                <div class="header2">Zaadoptowanych zwierząt</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class=" text-center allocationItem1">
+                <div>
+                    <img src="~/pictures/cat2.png" class="img-responsive center-block" style="max-width:50%" />
+                </div>
+                <div class="number">@ViewBag.kotCounter</div>
+                <div class="header2">Ilość kotów do adopcji</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <h1 class="text-center naglowki" >Psy do adopcji</h1>
+        <div class="owl-carousel owl-theme">
+            
+            @foreach (zwierze pies in (zwierze[])ViewBag.psy)
+            {
+            <div class="item">
+                <a href="@Url.Action("Details","Zwierze",new { id = pies.id})">
+                    <div class=" image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                        <img src="~/pictures/pets/@pies.zdjecie" class="image_img" />
+                        <div class="image_overlay image_overlay--blur">
+                            <div class="pet_name">@pies.nazwa</div>
+                            <p class="sex"><span class="title">Płeć:</span> @pies.plec<br /><span class="title">Wielkość: </span>@pies.wielkosc</p>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+                
+            }
+            
+        </div>
+
+    </div>
+    <div class="container" style="margin-bottom:10px;">
+        <h1 class="text-center naglowki">Koty do adopcji</h1>
+        <div class="owl-carousel owl-theme">
+
+            @foreach (zwierze kot in (zwierze[])ViewBag.koty)
+            {
+                <div class="item">
+                    <a href="@Url.Action("Details","Zwierze",new { id = kot.id})">
+                        <div class="image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                            <img src="~/pictures/pets/@kot.zdjecie" class="image_img" />
+                            <div class="image_overlay image_overlay--blur">
+                                <div class="pet_name">@kot.nazwa</div>
+                                <p class="sex"><span class="title">Płeć:</span> @kot.plec<br /><span class="title">Wielkość: </span>@kot.wielkosc</p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+ 
+
+        <!---logowanie-->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @model Schronisko.konto_info
+            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h2 class="modal-title w-100 font-weight-bold">Logowanie</h2>
+                        </div>
+                        <div class="modal-body mx-3 bg-secondary">
+                            <div class="md-form mb-5">
+                                <i class="fas fa-envelope prefix grey-text"></i>
+                                @Html.LabelFor(model => model.login, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
+                            </div>
+                            <br />
+                            <div class="md-form mb-4">
+                                <i class="fas fa-lock prefix grey-text"></i>
+                                @Html.LabelFor(model => model.haslo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.EditorFor(model => model.haslo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.haslo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-warning text-light">@Html.ActionLink("Rejestracja", "Create", "Uzytkownik")</button>
+                            <input type="submit" value="Zaloguj" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }

@@ -1,0 +1,76 @@
+﻿@model Schronisko.uzytkownik
+
+<div>
+    <h4>uzytkownik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pesel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pesel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.miasto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.miasto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kod_pocztowy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kod_pocztowy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ulica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ulica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nr_mieszkania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nr_mieszkania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.konto_info.login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.konto_info.login)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

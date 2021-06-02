@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Schronisko.zwierze>
+<link href="~/Content/homeStyles.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row" style=" background-image: url('../pictures/background2.png'); background-repeat: no-repeat; background-position: center;"">
+        <div class="col-md-2 " style=" border: 2px solid black; margin-left:10px;margin-top:30px;margin-bottom:20px; border-radius: 5px;  background:gray">
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            Nazwa<br />
+                            @Html.TextBox("nameString", null, htmlAttributes: new { @class = "form-control " })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            Kastracja
+                            @Html.DropDownList("kastracjaList", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            Płeć
+                            @Html.DropDownList("plecList", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            Gatunek
+                            @Html.DropDownList("gatunekList", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            Wielkość
+                            @Html.DropDownList("wielkoscList", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            <input type="submit" value="Szukaj" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="col-md-9 animalDisplay ">
+            <h1 class="text-center naglowki" style="color:white;">Wyszukiwarka</h1>
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("Details","Zwierze",new { id = item.id})">
+                    <div class="col-sm-2 image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                        <img src="~/pictures/pets/@item.zdjecie" class="image_img" />
+                        <div class="image_overlay image_overlay--blur">
+                            <div class="pet_name">@item.nazwa</div>
+                            <p class="sex"><span class="title">Płeć:</span> @item.plec<br /><span class="title">Wielkość: </span>@item.wielkosc</p>
+
+                        </div>
+                    </div>
+                </a>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

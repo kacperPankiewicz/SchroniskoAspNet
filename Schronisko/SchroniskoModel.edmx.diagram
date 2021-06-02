@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7548cf6c9e8b438f97732efed7d0e39b" Name="Diagram1">
+        <EntityTypeShape EntityType="SchroniskoBazaModel.historia_adopcji" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.kojec" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.konto_info" Width="1.5" PointX="1.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.pracownik" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.rasa" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.stanowisko" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.uprawnienia" Width="1.5" PointX="1.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.uzytkownik" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__historia___Praco__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__historia___Uzytk__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__konto_inf__Upraw__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__uzytkowni__Konto__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__pracownik__stano__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__pracownik__Uzytk__47DBAE45" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchroniskoBazaModel.zwierze" Width="1.5" PointX="3" PointY="2.5" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__historia___Zwier__4D94879B" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__Kojec_i__2F10007B" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__rasa_id__300424B4" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

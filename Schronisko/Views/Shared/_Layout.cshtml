@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{
+        if (Session["user"] != null)
+        {
+            ViewBag.user = ((uzytkownik)Session["user"]).imie;
+        }
+
+    }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - moja aplikacja platformy ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/OwlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/OwlCarousel/owl.theme.default.min.css">
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse  navbar-fixed-top" id="navStyle">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href='@Url.Action("Index", "Home")' class="navbar-brand">
+
+                    <img src='@Url.Content("~/pictures/logo.png")' height="20" />
+
+                </a>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav  mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Informacje", "About", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav  " style="float:right">
+                    @if (Session["user"] == null)
+                    {
+                        <li class="nav-item"><a href="" data-toggle="modal" data-target="#modalLoginForm">Zaloguj</a></li>
+                    }
+                    @if (Session["user"] != null)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Witaj, @ViewBag.user
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="nav-item dropdown-item text-center ">
+                                    @Html.ActionLink("Wyloguj", "Logout", "Home" ,null, new { @style = "color:black;text-decoration:none;" })
+                                </div>
+
+
+
+
+                            </div>
+                        </li>
+
+
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+
+        <div class="text-center container-fluid" id="foot">
+
+            <img src="~/pictures/logo.png" width="50" />
+        </div>
+    </div>
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/OwlCarousel/owl.carousel.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                margin: 5,
+                items: 4,
+                loop:true
+
+            })
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+

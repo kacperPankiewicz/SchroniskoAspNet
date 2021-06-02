@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SchroniskoBazaModelStoreContainer" CdmEntityContainer="SchroniskoBazaEntities">
+    <EntitySetMapping Name="historia_adopcji">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.historia_adopcji">
+        <MappingFragment StoreEntitySet="historia_adopcji">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="Zwierze_id" ColumnName="Zwierze_id" />
+          <ScalarProperty Name="Uzytkownik_id" ColumnName="Uzytkownik_id" />
+          <ScalarProperty Name="Pracownik_id" ColumnName="Pracownik_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kojec">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.kojec">
+        <MappingFragment StoreEntitySet="kojec">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dystrykt" ColumnName="dystrykt" />
+          <ScalarProperty Name="klatka" ColumnName="klatka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="konto_info">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.konto_info">
+        <MappingFragment StoreEntitySet="konto_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+          <ScalarProperty Name="Uprawnienia_id" ColumnName="Uprawnienia_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pracownik">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.pracownik">
+        <MappingFragment StoreEntitySet="pracownik">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="pesel" ColumnName="pesel" />
+          <ScalarProperty Name="miasto" ColumnName="miasto" />
+          <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+          <ScalarProperty Name="ulica" ColumnName="ulica" />
+          <ScalarProperty Name="nr_mieszkania" ColumnName="nr_mieszkania" />
+          <ScalarProperty Name="stanowisko_id" ColumnName="stanowisko_id" />
+          <ScalarProperty Name="Uzytkownik_Info_id" ColumnName="Uzytkownik_Info_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rasa">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.rasa">
+        <MappingFragment StoreEntitySet="rasa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stanowisko">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.stanowisko">
+        <MappingFragment StoreEntitySet="stanowisko">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uprawnienia">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.uprawnienia">
+        <MappingFragment StoreEntitySet="uprawnienia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uzytkownik">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.uzytkownik">
+        <MappingFragment StoreEntitySet="uzytkownik">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="pesel" ColumnName="pesel" />
+          <ScalarProperty Name="miasto" ColumnName="miasto" />
+          <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+          <ScalarProperty Name="ulica" ColumnName="ulica" />
+          <ScalarProperty Name="nr_mieszkania" ColumnName="nr_mieszkania" />
+          <ScalarProperty Name="Konto_Info_id" ColumnName="Konto_Info_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zwierze">
+      <EntityTypeMapping TypeName="SchroniskoBazaModel.zwierze">
+        <MappingFragment StoreEntitySet="zwierze">
+          <ScalarProperty Name="wielkosc" ColumnName="wielkosc" />
+          <ScalarProperty Name="gatunek" ColumnName="gatunek" />
+          <ScalarProperty Name="plec" ColumnName="plec" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="zdjecie" ColumnName="zdjecie" />
+          <ScalarProperty Name="rasa_id" ColumnName="rasa_id" />
+          <ScalarProperty Name="Kojec_id" ColumnName="Kojec_id" />
+          <ScalarProperty Name="kastracja" ColumnName="kastracja" />
+          <ScalarProperty Name="data_ur" ColumnName="data_ur" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

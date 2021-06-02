@@ -1,0 +1,225 @@
+﻿body {
+    font-size:1.5em;
+}
+#home {
+    width: 100%;
+    height: 450px;
+    background-image: url('../pictures/home.jpg');
+    background-repeat: no-repeat;
+    z-index: 0;
+    background-position: center;
+   
+}
+
+#text {
+    position: relative;
+    top: 47%;
+    transform: translateY(-45%);
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 70%);
+    font-size:4em;
+    color:white;
+}
+#finder {
+    position: relative;
+    z-index: 2;
+    top: 280px;
+    width: 40vw;
+    height: 60px;
+    color: red;
+    border-radius: 5px;
+    background: #008532;
+    margin-left: auto;
+    margin-right: auto;
+}
+#decoration {
+    position: relative;
+    bottom: -230px;
+    width: 100%;
+    height: 81px;
+    
+    background: url('../pictures/layer-1.png') repeat-x;
+}
+.vcenter {
+    color:white;
+    font-weight:bold;
+    padding-top:20px;
+    padding-bottom:19px;
+    
+   
+}
+.vcenter:hover{
+    background:#025923;
+    color: gray;
+    border-radius: 5px;
+    border:none;
+}
+.vcenter1 {
+    color: white;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 19px;
+}
+
+    .vcenter1:hover {
+        background: #025923;
+        color: gray;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+.vcenter2 {
+    color: white;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 19px;
+}
+
+.vcenter2:hover {
+    background: #025923;
+    color: gray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+        
+}
+.image {
+    position: relative;
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 10px 5px 5px black;
+    border: solid 1px gray;
+    border-radius: 5px;
+    
+}
+.image1 {
+    position: relative;
+    width: 200px;
+    height: 198px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 10px 5px 5px gray;
+    border: solid 1px gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../pictures/background2.png');
+}
+
+.image_img {
+    display: block;
+    width: 100%;
+    color: white;
+}
+.image_overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display:flex;
+    font-family: 'Quicksand', sans-serif;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    opacity: 0;
+    transition: opacity 0.25s
+}
+.image_overlay:hover {
+    opacity: 1;
+    border: solid 1px gray;
+    border-radius: 5px;
+    }
+.image_overlay--blur{
+    backdrop-filter:blur(5px);
+}
+.image_overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+.image_overlay:hover > * {
+    transform: translateY(0);
+    
+}
+.pet_name {
+    font-size: 2em;
+    font-weight: bold;
+    color:white;
+}
+.sex {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+    color: white;
+}
+.animalDisplay{
+    margin-top:20px;
+}
+#counterDisplay {
+    height: fit-content();
+    background-image: url('../pictures/background2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    margin: auto;
+}
+#allocationItem1 {
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+}
+.allocationItem2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+h1{
+    font-size:2em;
+}
+h2 {
+    font-size: 1.2em;
+}
+#borderInside {
+    height: calc(100%-20px);
+    width: calc(100%-20px);
+    border: solid #025923 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 40px 20px;
+    color: white;
+    text-decoration: none;
+}
+#borderInside:hover {
+    background: #025923;
+    font-weight:bold;
+    border-radius: 5px;
+    border-color: #025923;
+}
+#contentBorder{
+   text-align:center;
+}
+.title {
+    font-weight: bold;
+    color: #04ad44;
+}
+.naglowki {
+    color: #272726;
+    font-weight: bold;
+    
+}
+.header2 {
+    font-size: 2.2em;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+.number {
+    margin-top:10px;
+    
+    color: #5CFF9A;
+    font-weight: bold;
+    font-size:3em;
+}
+

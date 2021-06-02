@@ -1,0 +1,28 @@
+﻿#foot {
+    background: #312F34;
+    height: fit-content();
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.decoration {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: white;
+    left: 0;
+    right: 0;
+    top:0;
+}
+#navStyle {
+    background: #312F34;
+}
+.brandImg {
+    background-image: url('../pictures/logoWhite.png');
+}
+.hrefs {
+    text-decoration: none !important;
+    color: black !important;
+}
+.hrefs:hover {
+        text-decoration: none !important;
+}

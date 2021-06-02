@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Schronisko.uzytkownik>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.miasto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kod_pocztowy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ulica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nr_mieszkania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.konto_info.login)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pesel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.miasto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kod_pocztowy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ulica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nr_mieszkania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.konto_info.login)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

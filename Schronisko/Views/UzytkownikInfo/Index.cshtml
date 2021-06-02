@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Schronisko.ViewModels.Uzytkownik_kontoInfoVM>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.miasto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kod_pocztowy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ulica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nr_mieszkania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konto_Info_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_historia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.haslo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uprawnienia_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pesel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.miasto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kod_pocztowy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ulica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nr_mieszkania)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konto_Info_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_historia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.haslo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uprawnienia_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

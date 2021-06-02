@@ -1,0 +1,28 @@
+﻿@model Schronisko.kojec
+
+<div>
+    <h4>kojec</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dystrykt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dystrykt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.klatka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.klatka)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
