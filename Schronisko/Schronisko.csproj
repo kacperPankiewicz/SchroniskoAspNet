@@ -199,6 +199,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\descriptionStyles.css" />
     <Content Include="Content\homeStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -221,6 +222,19 @@
     <Content Include="pictures\logoWhite.png" />
     <Content Include="pictures\kot.png" />
     <Content Include="pictures\love1.png" />
+    <Content Include="pictures\petsFull\1.jpg" />
+    <Content Include="pictures\petsFull\10.jpg" />
+    <Content Include="pictures\petsFull\11.jpg" />
+    <Content Include="pictures\petsFull\12.jpg" />
+    <Content Include="pictures\petsFull\13.jpg" />
+    <Content Include="pictures\petsFull\2.jpg" />
+    <Content Include="pictures\petsFull\3.jpg" />
+    <Content Include="pictures\petsFull\4.jpg" />
+    <Content Include="pictures\petsFull\5.jpg" />
+    <Content Include="pictures\petsFull\6.jpg" />
+    <Content Include="pictures\petsFull\7.jpg" />
+    <Content Include="pictures\petsFull\8.jpg" />
+    <Content Include="pictures\petsFull\9.jpg" />
     <Content Include="pictures\pets\1.png" />
     <Content Include="pictures\pets\10.png" />
     <Content Include="pictures\pets\11.png" />

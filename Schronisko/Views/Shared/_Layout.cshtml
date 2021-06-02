@@ -53,30 +53,26 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="nav-item dropdown-item text-center ">
-                                    @Html.ActionLink("Wyloguj", "Logout", "Home" ,null, new { @style = "color:black;text-decoration:none;" })
+                                    @Html.ActionLink("Wyloguj", "Logout", "Home", null, new { @style = "color:black;text-decoration:none;" })
                                 </div>
-
-
-
-
                             </div>
                         </li>
-
-
                     }
-
                 </ul>
             </div>
         </div>
     </div>
-    <div class="">
+    <div>
         @RenderBody()
 
+
+    </div>
+    <footer>
         <div class="text-center container-fluid" id="foot">
 
             <img src="~/pictures/logo.png" width="50" />
         </div>
-    </div>
+    </footer>
 
 
 
@@ -91,7 +87,7 @@
             $('.owl-carousel').owlCarousel({
                 margin: 5,
                 items: 4,
-                loop:true
+                loop: true
 
             })
         });

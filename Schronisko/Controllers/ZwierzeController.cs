@@ -41,9 +41,8 @@ namespace Schronisko.Controllers
         // GET: Zwierze/Details/5
         public ActionResult Details(int id)
         {
-            
-
             var zwierzeToDisplay = _db.zwierze.Find(id);
+            ViewBag.nazwa = zwierzeToDisplay.nazwa;
             return View(zwierzeToDisplay);
         }
 

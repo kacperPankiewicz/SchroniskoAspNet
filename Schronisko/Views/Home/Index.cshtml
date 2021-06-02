@@ -32,7 +32,7 @@
         {
             <a href="@Url.Action("Details","Zwierze",new { id = zw.id})">
                 <div class="col-sm-2 image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
-                    <img src="~/pictures/pets/@zw.zdjecie" class="image_img" />
+                    <img src="~/pictures/pets/@(zw.zdjecie).png" class="image_img" />
                     <div class="image_overlay image_overlay--blur">
                         <div class="pet_name">@zw.nazwa</div>
                         <p class="sex"><span class="title">Płeć:</span> @zw.plec<br /><span class="title">Wielkość: </span>@zw.wielkosc</p>
@@ -97,7 +97,7 @@
             <div class="item">
                 <a href="@Url.Action("Details","Zwierze",new { id = pies.id})">
                     <div class=" image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
-                        <img src="~/pictures/pets/@pies.zdjecie" class="image_img" />
+                        <img src="~/pictures/pets/@(pies.zdjecie).png" class="image_img" />
                         <div class="image_overlay image_overlay--blur">
                             <div class="pet_name">@pies.nazwa</div>
                             <p class="sex"><span class="title">Płeć:</span> @pies.plec<br /><span class="title">Wielkość: </span>@pies.wielkosc</p>
@@ -121,7 +121,7 @@
                 <div class="item">
                     <a href="@Url.Action("Details","Zwierze",new { id = kot.id})">
                         <div class="image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
-                            <img src="~/pictures/pets/@kot.zdjecie" class="image_img" />
+                            <img src="~/pictures/pets/@(kot.zdjecie).png" class="image_img" />
                             <div class="image_overlay image_overlay--blur">
                                 <div class="pet_name">@kot.nazwa</div>
                                 <p class="sex"><span class="title">Płeć:</span> @kot.plec<br /><span class="title">Wielkość: </span>@kot.wielkosc</p>
