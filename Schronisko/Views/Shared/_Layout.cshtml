@@ -37,8 +37,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav  mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">@Html.ActionLink("Strona główna", "Index", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Informacje", "About", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav  " style="float:right">
                     @if (Session["user"] == null)
@@ -47,16 +45,24 @@
                     }
                     @if (Session["user"] != null)
                     {
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Witaj, @ViewBag.user
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <div class="nav-item dropdown-item text-center ">
-                                    @Html.ActionLink("Wyloguj", "Logout", "Home", null, new { @style = "color:black;text-decoration:none;" })
-                                </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Witaj, @ViewBag.user
+                    </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @if (((konto_info)Session["user_cred"]).Uprawnienia_id == 1)
+                        {
+                            <div class="nav-item dropdown-item text-center ">
+                                @Html.ActionLink("Panel administratora", "index", "Admin", null, new { @style = "color:black;text-decoration:none;" })
                             </div>
-                        </li>
+                        }
+                        <div class="nav-item dropdown-item text-center ">
+                            @Html.ActionLink("Wyloguj", "Logout", "Home", null, new { @style = "color:black;text-decoration:none;" })
+                        </div>
+
+                    </div>
+                </li>
                     }
                 </ul>
             </div>
@@ -88,8 +94,9 @@
                 margin: 5,
                 items: 4,
                 loop: true
-
             })
+
+         
         });
     </script>
 

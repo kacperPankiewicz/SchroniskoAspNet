@@ -1,44 +1,45 @@
 ﻿@model Schronisko.historia_adopcji
+<div class="container">
+    <div>
+        <h4>historia_adopcji</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.data)
+            </dt>
 
-<div>
-    <h4>historia_adopcji</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.data)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.data)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.data)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.pracownik.imie)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.pracownik.imie)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.pracownik.imie)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.pracownik.imie)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.uzytkownik.imie)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.uzytkownik.imie)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.uzytkownik.imie)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.uzytkownik.imie)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.zwierze.nazwa)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.zwierze.nazwa)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.zwierze.nazwa)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.zwierze.nazwa)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

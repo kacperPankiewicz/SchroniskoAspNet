@@ -1,89 +1,109 @@
 ﻿@model Schronisko.zwierze
-<link href="~/Content/descriptionStyles.css" rel="stylesheet" />
+<link href="~/Content/descriptionStyles1.css" rel="stylesheet" />
 
 <div id="home">
-   <div id="text" class="text-center">@ViewBag.nazwa</div>
+    <div id="text" class="text-center">@ViewBag.nazwa</div>
 </div>
 <div>
-<div class="row">
-    <div class="col-md-7">
- 
-        <img class="img-responsive center-block" id="imgCustom" src="~/pictures/petsFull/@(Html.DisplayFor(model => model.zdjecie)).jpg" />
+    <div id="content">
+        <div class="row">
+            <div class="col-md-7">
 
-    </div>
-    <div class="col-sm-5">
-        <div id="flexInfo">
-            <div id="dataContainer"><dl class="dl-horizontal">
-   
-        <dt>
-            @Html.DisplayNameFor(model => model.nazwa)
-        </dt>
+                <img class="img-responsive center-block" id="imgCustom" src="~/pictures/petsFull/@(Html.DisplayFor(model => model.zdjecie)).jpg" />
 
-    <dd>
-        @Html.DisplayFor(model => model.nazwa)
-    </dd>
+            </div>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.data_ur)
-    </dt>
+            <div class="col-sm-5">
+                <div id="flexInfo">
+                    <div id="dataContainer">
+                        <dl class="dl-horizontal">
 
-    <dd>
-        @Convert.ToDateTime(Model.data_ur).ToShortDateString()
-    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.nazwa)
+                            </dt>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.kastracja)
-    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.nazwa)
+                            </dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.kastracja)
-    </dd>
-  
+                            <dt>
+                                @Html.DisplayNameFor(model => model.data_ur)
+                            </dt>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.plec)
-    </dt>
+                            <dd>
+                                @Convert.ToDateTime(Model.data_ur).ToShortDateString()
+                            </dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.plec)
-    </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.kastracja)
+                            </dt>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.gatunek)
-    </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.kastracja)
+                            </dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.gatunek)
-    </dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.wielkosc)
-    </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.plec)
+                            </dt>
 
-    <dd>
-        @Html.DisplayFor(model => model.wielkosc)
-    </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.plec)
+                            </dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.kojec.dystrykt)
-    </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.gatunek)
+                            </dt>
 
-    <dd>
-        @Html.DisplayFor(model => model.kojec.dystrykt)
-    </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.gatunek)
+                            </dd>
 
-    <dt>
-        rasa
-    </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.wielkosc)
+                            </dt>
 
-    <dd>
-        @Html.DisplayFor(model => model.rasa.nazwa)
-    </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.wielkosc)
+                            </dd>
 
-</dl></div>
-            <div id="buttonContainer">Adoptuj</div>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.kojec.dystrykt)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.kojec.dystrykt)
+                            </dd>
+
+                            <dt>
+                                rasa
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.rasa.nazwa)
+                            </dd>
+
+                        </dl>
+                    </div>
+
+
+
+                    @if (Session["user"] != null)
+                    {
+                <div id="buttonContainer">
+                    
+
+                    <a href="@Url.Action("RequestAdoption","Zwierze",new { id = Model.id})">
+                        <div id="buttinio" class="btn btn-success"></div>
+                    </a>
+                    
+                </div>
+                    }
+                  
+
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 

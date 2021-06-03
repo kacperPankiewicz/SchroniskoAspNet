@@ -13,8 +13,8 @@ namespace Schronisko.Controllers
         List<SelectListItem> kastracja = new List<SelectListItem>(new[]
       {
             new SelectListItem() { Value="", Text=""},
-            new SelectListItem() { Value="0", Text="0"},
-            new SelectListItem() { Value="1", Text="1"},
+            new SelectListItem() { Value="nie", Text="nie"},
+            new SelectListItem() { Value="tak", Text="tak"},
         });
         List<SelectListItem> plec = new List<SelectListItem>(new[]
        {    new SelectListItem() { Value="", Text=""},

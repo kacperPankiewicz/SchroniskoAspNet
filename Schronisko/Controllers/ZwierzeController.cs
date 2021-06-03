@@ -45,6 +45,21 @@ namespace Schronisko.Controllers
             ViewBag.nazwa = zwierzeToDisplay.nazwa;
             return View(zwierzeToDisplay);
         }
+        public ActionResult RequestAdoption(int id)
+        {
+
+        historia_adopcji newRequest = new historia_adopcji();
+           
+            newRequest.data = DateTime.UtcNow;
+            newRequest.Uzytkownik_id = ((uzytkownik)Session["user"]).id;
+            newRequest.Zwierze_id = id;
+            newRequest.Pracownik_id = 3;
+            
+            _db.historia_adopcji.Add(newRequest);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         // GET: Zwierze/Create
         public ActionResult Create()
@@ -118,7 +133,8 @@ namespace Schronisko.Controllers
             var zwierzeToEdit = _db.zwierze.Find(id);
             return View(zwierzeToEdit);
         }
-
+        
+    
         // POST: Zwierze/Edit/5
         [HttpPost]
         public ActionResult Edit(zwierze zwierzeToEdit)
