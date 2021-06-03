@@ -58,7 +58,7 @@ namespace Schronisko.Controllers
             _db.historia_adopcji.Add(newRequest);
             _db.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         // GET: Zwierze/Create
