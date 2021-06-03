@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Schronisko.historia_adopcji>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.uzytkownik.imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uzytkownik.nazwisko)
+            </th>
+            <th>
+               nazwa zwierzaka
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uzytkownik.imie)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.uzytkownik.nazwisko)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zwierze.nazwa)
+                </td>
+                <td>
+                    @Html.ActionLink("Akceptuj", "AcceptRequest", new { id = item.id }) |
+                    @Html.ActionLink("Odrzuć", "DeclineRequest", new { id = item.id })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

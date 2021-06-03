@@ -17,7 +17,7 @@ namespace Schronisko.Controllers
                 ViewBag.user = ((uzytkownik)Session["user"]).imie;
 
             }
-            ViewBag.zwierzeta = _db.zwierze.Where(x => x.status.Contains("0")).Take(10).ToArray();
+            ViewBag.zwierzeta = _db.zwierze.Where(x => x.status.Contains("0")).Take(9).ToArray();
             ViewBag.koty = _db.zwierze.Where(x => x.gatunek.Contains("kot") && x.status.Contains("0")).ToArray();
             ViewBag.psy = _db.zwierze.Where(x => x.gatunek.Contains("pies") && x.status.Contains("0")).ToArray();
             ViewBag.piesCounter = _db.zwierze.Where(x => x.gatunek.Contains("pies") && x.status.Contains("0")).Count();

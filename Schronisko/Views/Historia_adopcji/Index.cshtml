@@ -1,45 +1,47 @@
 ﻿@model IEnumerable<Schronisko.historia_adopcji>
+<div class="container">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pracownik.imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uzytkownik.imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zwierze.nazwa)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.data)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pracownik.imie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.uzytkownik.imie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.zwierze.nazwa)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pracownik.imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uzytkownik.imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zwierze.nazwa)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.data)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pracownik.imie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.uzytkownik.imie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zwierze.nazwa)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+    </div>
