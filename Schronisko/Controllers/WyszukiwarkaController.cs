@@ -66,7 +66,7 @@ namespace Schronisko.Controllers
             }
             if (!String.IsNullOrEmpty(kastracjaSelected))
             {
-                zwierz = _db.zwierze.Where(s => s.kastracja.Contains(wielkoscSelected));
+                zwierz = _db.zwierze.Where(s => s.kastracja.Contains(kastracjaSelected));
             }
 
 

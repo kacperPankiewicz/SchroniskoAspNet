@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Schronisko.zwierze>
-<link href="~/Content/homeStyles1.css" rel="stylesheet" />
-<div class="container-fluid" style=" background-image: url('../pictures/background2.png');  background-position: center; height:fit-content();" >
+<link href="~/Content/homeStyles.css" rel="stylesheet" />
+<div class="container-fluid" id="ContentQueryContainer" >
     <div class="container" >
         <div class="row">
-            <div class="col-md-2" style=" border: 2px solid black; margin-left:10px;margin-right:80px;margin-top:30px;margin-bottom:20px; border-radius: 5px;  background:gray">
+            <div class="col-md-2" id="searchContainer">
                 @using (Html.BeginForm())
                 {
                     <div class="form-horizontal">

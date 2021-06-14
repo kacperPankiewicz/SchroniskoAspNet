@@ -12,7 +12,16 @@ namespace Schronisko.Controllers
         // GET: Kojec
         public ActionResult Index()
         {
-            return View(_db.kojec.ToList());
+
+            var val = Session["user_cred"] == null ? 0 : ((konto_info)Session["user_cred"]).Uprawnienia_id;
+            if (val != 1)
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            else
+                return View(_db.kojec.ToList());
         }
 
         // GET: kojec/Details/5

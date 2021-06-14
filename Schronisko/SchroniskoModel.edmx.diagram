@@ -20,9 +20,9 @@
         <AssociationConnector Association="SchroniskoBazaModel.FK__pracownik__stano__48CFD27E" ManuallyRouted="false" />
         <AssociationConnector Association="SchroniskoBazaModel.FK__pracownik__Uzytk__47DBAE45" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SchroniskoBazaModel.zwierze" Width="1.5" PointX="3" PointY="2.5" />
-        <AssociationConnector Association="SchroniskoBazaModel.FK__historia___Zwier__4D94879B" />
-        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__Kojec_i__2F10007B" />
-        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__rasa_id__300424B4" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__historia___Zwier__06CD04F7" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__Kojec_i__04E4BC85" />
+        <AssociationConnector Association="SchroniskoBazaModel.FK__zwierze__rasa_id__05D8E0BE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -222,5 +222,22 @@ h2 {
     font-weight: bold;
     font-size:3em;
 }
+#searchContainer {
+ 
+        border: 2px solid black;
+        margin-left:10px;
+        margin-right:80px;
+        margin-top:30px;
+        margin-bottom:20px;
+        border-radius: 5px;
+        background:gray;
+}
+#ContentQueryContainer {
+    
+        background-image: url('../pictures/background2.png');
+        background-position: center;
+        height:fit-content();
+        min-height:100vh;
+}
 
 
