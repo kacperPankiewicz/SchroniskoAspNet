@@ -1,36 +1,144 @@
-﻿<div class="container">
-    <div class="row text-center table table-striped" style="margin-top:20px">
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "Kojec")">Kojec</a></p>
-        </div>
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "Stanowisko")">Stanowisko</a></p>
-        </div>
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "Uzytkownik")">Uzytkownik</a></p>
-        </div>
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "Uprawnienia")">Uprawnienia</a></p>
-        </div>
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "KontoInfo")">KontoInfo</a></p>
-        </div>
-        <div class="col-md-2">
-            <p><a href="@Url.Action("Index", "Pracownik")">Pracownik</a></p>
-        </div>
-        </div>
-        <div class="row text-center table table-striped">
-            <div class="col-md-2">
-                <p><a href="@Url.Action("Index", "Rasa")">Rasa</a></p>
+﻿<link href="~/Content/adminCss.css" rel="stylesheet" />
+<div class="container" id="content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/kojec.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Kojec</h4>
+                        <button class="btn  btn-success float-right" onclick="location.href='@Url.Action("Index", "Kojec")'">Zobacz</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <p><a href="@Url.Action("Index", "Zwierze")">Zwierze</a></p>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/stanowisko.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Stanowisko</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "Stanowisko")'">Zobacz</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <p><a href="@Url.Action("Index", "Historia_adopcji")">Historia_adopcji</a></p>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/users.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Użytkownik</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "Uzytkownik")'">Zobacz</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <p><a href="@Url.Action("Index", "RequestConf")">Adopcje</a></p>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/permissions.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Uprawnienia</h4>
+                        <button class="btn  btn-success float-right" onclick="location.href='@Url.Action("Index", "Uprawnienia")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img  class="img-responsive img-rounded" src="~/pictures/AdminPictures/kontoinfo.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Konta</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "KontoInfo")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/pracownik.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Pracownik</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "Pracownik")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/rasa.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Rasa</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "Rasa")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img  class="img-responsive img-rounded" src="~/pictures/AdminPictures/zwierze.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Zwierze</h4>
+                        <button class="btn btn-success  float-right" onclick="location.href='@Url.Action("Index", "Zwierze")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/historia.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Historia adopcji</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "Historia_adopcji")'">Zobacz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel-group col-md-4 col-md-offset-4" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                        <img class="img-responsive img-rounded" src="~/pictures/AdminPictures/request.png" />
+                    </div>
+                    <div class="panel-body">
+                        <h4>Adopcje</h4>
+                        <button class="btn btn-success float-right" onclick="location.href='@Url.Action("Index", "RequestConf")'">Zobacz</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>

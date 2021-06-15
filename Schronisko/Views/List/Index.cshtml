@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Schronisko.zwierze>
+<link href="~/Content/list.css" rel="stylesheet" />
+<div class="container-fluid" id="ContentQueryContainer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-sm-12 bordered">
+                <h1>Przyjęte wnioski</h1>
+            </div>
+            <div class="col-sm-12 ">
+                @foreach (zwierze zw in (zwierze[])ViewBag.AcceptedAnimals)
+                {
+                    <a href="@Url.Action("Details","Zwierze",new { id = zw.id})">
+                        <div class="col-sm-2 image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                            <img src="~/pictures/pets/@(zw.zdjecie).png" class="image_img" />
+                            <div class="image_overlay image_overlay--blur">
+                                <div class="pet_name">@zw.nazwa</div>
+                                <p class="sex"><span class="title">Płeć:</span> @zw.plec<br /><span class="title">Wielkość: </span>@zw.wielkosc</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="col-sm-12 bordered">
+                <h1>Oczekujące wnioski</h1>
+            </div>
+            <div class="col-sm-12">
+                @foreach (zwierze zw1 in (zwierze[])ViewBag.PendingAnimals)
+                {
+                    <a href="@Url.Action("Details","Zwierze",new { id = zw1.id})">
+                        <div class="col-sm-2 image  text-light" style="padding-left:0px !important;padding-right:0px !important;">
+                            <img src="~/pictures/pets/@(zw1.zdjecie).png" class="image_img" />
+                            <div class="image_overlay image_overlay--blur">
+                                <div class="pet_name">@zw1.nazwa</div>
+                                <p class="sex"><span class="title">Płeć:</span> @zw1.plec<br /><span class="title">Wielkość: </span>@zw1.wielkosc</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -37,7 +37,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav  mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">@Html.ActionLink("Strona główna", "Index", "Home")</li>
-                </ul>
+                    @if (Session["user"] != null)
+                    {
+                        <li class="nav-item">@Html.ActionLink("Twoje adopcje", "Index", "List")</li>
+                    }
+                    </ul>
+                    
                 <ul class="nav navbar-nav  " style="float:right">
                     @if (Session["user"] == null)
                     {

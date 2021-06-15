@@ -13,7 +13,16 @@ namespace Schronisko.Controllers
         // GET: pracownik
         public ActionResult Index()
         {
-            return View(_db.pracownik.ToList());
+
+            var val = Session["user_cred"] == null ? 0 : ((konto_info)Session["user_cred"]).Uprawnienia_id;
+            if (val != 1)
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            else
+                return View(_db.pracownik.ToList());
         }
 
         // GET: pracownik/Details/5

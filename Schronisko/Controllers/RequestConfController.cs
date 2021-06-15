@@ -10,10 +10,22 @@ namespace Schronisko.Controllers
     {
         // GET: RequestConf
         private SchroniskoBazaEntities _db = new SchroniskoBazaEntities();
+      
         public ActionResult Index()
         {
-            var requests = _db.historia_adopcji.Where(x => x.Pracownik_id == 3);
-            return View(requests);
+
+            var val = Session["user_cred"] == null ? 0 : ((konto_info)Session["user_cred"]).Uprawnienia_id;
+            if (val != 1)
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            else
+            {
+                var requests = _db.historia_adopcji.Where(x => x.Pracownik_id == 3);
+                return View(requests);
+            }
         }
         public ActionResult AcceptRequest(int id)
         {

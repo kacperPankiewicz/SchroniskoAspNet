@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Schronisko.uzytkownik>
 <div class="container">
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Stwórz nowy", "Create")
     </p>
     <table class="table">
         <tr>
@@ -60,9 +60,9 @@
                     @Html.DisplayFor(modelItem => item.konto_info.login)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    @Html.ActionLink("Edycja", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Detale", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.id })
                 </td>
             </tr>
         }

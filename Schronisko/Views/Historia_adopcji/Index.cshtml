@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Schronisko.historia_adopcji>
 <div class="container">
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Stwórz nowy", "Create")
     </p>
     <table class="table">
         <tr>
@@ -9,13 +9,13 @@
                 @Html.DisplayNameFor(model => model.data)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.pracownik.imie)
+               Imie pracownika
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.uzytkownik.imie)
+                Imie użytkownika
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.zwierze.nazwa)
+                Imie zwierzęcia
             </th>
             <th></th>
         </tr>
@@ -36,9 +36,9 @@
                     @Html.DisplayFor(modelItem => item.zwierze.nazwa)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Detale", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.id })
                 </td>
             </tr>
         }

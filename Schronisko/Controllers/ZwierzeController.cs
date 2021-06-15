@@ -32,10 +32,19 @@ namespace Schronisko.Controllers
             new SelectListItem() { Value="sredni", Text="średni"}
         });
 
+      
         public ActionResult Index()
         {
-            
-            return View(_db.zwierze.ToList());
+
+            var val = Session["user_cred"] == null ? 0 : ((konto_info)Session["user_cred"]).Uprawnienia_id;
+            if (val != 1)
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            else
+                return View(_db.zwierze.ToList());
         }
 
         // GET: Zwierze/Details/5

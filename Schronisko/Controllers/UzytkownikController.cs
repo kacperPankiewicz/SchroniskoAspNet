@@ -13,7 +13,16 @@ namespace Schronisko.Controllers
         // GET: uzytkownik
         public ActionResult Index()
         {
-            return View(_db.uzytkownik.ToList());
+
+            var val = Session["user_cred"] == null ? 0 : ((konto_info)Session["user_cred"]).Uprawnienia_id;
+            if (val != 1)
+                return RedirectToRoute(new
+                {
+                    controller = "Home",
+                    action = "Index"
+                });
+            else
+                return View(_db.uzytkownik.ToList());
         }
 
         // GET: uzytkownik/Details/5
@@ -44,7 +53,7 @@ namespace Schronisko.Controllers
             konto_info kontInf = new konto_info();
             kontInf.login = newKonto.login;
             kontInf.haslo = newKonto.haslo;
-            kontInf.Uprawnienia_id = newKonto.Uprawnienia_id;
+            kontInf.Uprawnienia_id = 2 ;
             _db.konto_info.Add(kontInf);
 
 

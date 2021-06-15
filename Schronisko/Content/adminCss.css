@@ -1,0 +1,13 @@
+﻿.float-right{
+    float:right;
+}
+body {
+    
+    background-image: url('../pictures/background2.png');
+    background-position: center;
+    height: fit-content();
+    min-height: 100vh;
+}
+#content{
+    margin-top:20px;
+}

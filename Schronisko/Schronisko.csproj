@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KojecController.cs" />
     <Compile Include="Controllers\KontoInfoController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\PracownikController.cs" />
     <Compile Include="Controllers\RasaController.cs" />
     <Compile Include="Controllers\RequestConfController.cs" />
@@ -196,12 +197,14 @@
     <Content Include="App_Data\SchroniskoBaza_log.ldf">
       <DependentUpon>SchroniskoBaza.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\list.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\descriptionStyles1.css" />
-    <Content Include="Content\homeStyles1.css" />
+    <Content Include="Content\adminCss.css" />
+    <Content Include="Content\homeStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -211,6 +214,16 @@
     <Content Include="OwlCarousel\owl.carousel.min.css" />
     <Content Include="OwlCarousel\owl.carousel.min.js" />
     <Content Include="OwlCarousel\owl.theme.default.min.css" />
+    <Content Include="pictures\AdminPictures\historia.png" />
+    <Content Include="pictures\AdminPictures\kojec.png" />
+    <Content Include="pictures\AdminPictures\kontoinfo.png" />
+    <Content Include="pictures\AdminPictures\permissions.png" />
+    <Content Include="pictures\AdminPictures\pracownik.png" />
+    <Content Include="pictures\AdminPictures\rasa.png" />
+    <Content Include="pictures\AdminPictures\request.png" />
+    <Content Include="pictures\AdminPictures\stanowisko.png" />
+    <Content Include="pictures\AdminPictures\users.png" />
+    <Content Include="pictures\AdminPictures\zwierze.png" />
     <Content Include="pictures\background2.png" />
     <Content Include="pictures\cat.png" />
     <Content Include="pictures\cat2.png" />
@@ -341,6 +354,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Wyszukiwarka\Index.cshtml" />
     <Content Include="Views\RequestConf\Index.cshtml" />
+    <Content Include="Views\List\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
