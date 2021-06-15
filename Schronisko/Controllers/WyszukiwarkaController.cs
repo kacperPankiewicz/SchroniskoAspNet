@@ -69,8 +69,6 @@ namespace Schronisko.Controllers
                 zwierz = _db.zwierze.Where(s => s.kastracja.Contains(kastracjaSelected));
             }
 
-
-
             return View(zwierz);
         }
 
